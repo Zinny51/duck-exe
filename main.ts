@@ -12,7 +12,7 @@ function moveSpriteInTime (sprite: Sprite, x: number, y: number, t: number) {
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.PlayerShot, function (sprite, otherSprite) {
     if (started) {
         info.changeScoreBy(20)
-        bossLife += -10
+        bossLife += -2
         music.playTone(208, music.beat(BeatFraction.Eighth))
         lifeBarPic.fillRect(bossLife * 2, 0, 96 - bossLife * 2, 5, 15)
         lifeBar.setImage(lifeBarPic)
@@ -163,8 +163,8 @@ let lifeBarPic: Image = null
 let boss: Sprite = null
 let mySprite: Sprite = null
 let bossLife = 0
-bossLife = 1000
-info.setLife(25)
+bossLife = 75
+info.setLife(10)
 info.setScore(0)
 music.setVolume(20)
 mySprite = sprites.create(img`
